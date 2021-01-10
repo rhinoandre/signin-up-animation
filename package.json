@@ -1,0 +1,14 @@
+{
+  "name": "signin-up-animation",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:rhinoandre/signin-up-animation.git",
+  "author": "Rhino <andre.bazoli@yara.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "http-server"
+  },
+  "dependencies": {
+    "http-server": "^0.12.3"
+  }
+}
