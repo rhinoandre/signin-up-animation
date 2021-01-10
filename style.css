@@ -1,3 +1,7 @@
+:root {
+  --overlay-animtion-time: 0.7s;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -13,19 +17,18 @@ body {
   background: #ff416c;
   background: -webkit-linear-gradient(to right, #ff4b2b, #ff416c);
   background: linear-gradient(to right, #ff4b2b, #ff416c);
-  width: 80%;
+  width: 60%;
   height: 1000px;
   position: relative;
 }
 
-.overlay-left,
-.overlay-right {
+.form {
   position: absolute;
   width: 50%;
   height: 100%;
 }
 
-.overlay-right {
+.right {
   right: 0;
   top: 0;
 }
@@ -35,14 +38,47 @@ body {
   background-color: lightgray;
   width: 40%;
   height: 100%;
-  animation: hideSignUpAnimation 1s;
+  animation: hideSignUpAnimation var(--overlay-animtion-time);
   animation-timing-function: ease-out;
+  overflow: hidden;
 }
 
 .no-animation {
   animation: none;
 }
 
+.message {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  flex-flow: column;
+  transition: left var(--overlay-animtion-time);
+  transition-timing-function: ease-out;
+  width: fit-content;
+}
+
+.signin {
+  left: 33%;
+}
+
+.signup {
+  left: 170%;
+}
+
+.signin-active > .signin,
+.signup-active > .signup {
+  visibility: visible;
+}
+.signup-active > .signup {
+  left: 23%;
+}
+
+.signup-active > .signin {
+  left: -180%;
+}
+#switch-sign-method {
+  margin-top: 150px;
+}
 @keyframes hideSignUpAnimation {
   from {
     width: 40%;
@@ -71,12 +107,13 @@ body {
   }
 }
 
-.hide-right {
+.overlay.signup-active {
   left: 60.01%;
-  animation: hideSignInAnimation 1s;
+  animation: hideSignInAnimation var(--overlay-animtion-time);
   animation-timing-function: ease-in-out;
 }
 
+/* #region text styling */
 h1 {
   font-weight: bold;
   margin: 0;
@@ -114,6 +151,7 @@ button {
   letter-spacing: 1px;
   text-transform: uppercase;
   transition: transform 80ms ease-in;
+  width: 150px;
 }
 
 button:active {
@@ -128,3 +166,4 @@ button.ghost {
   background-color: transparent;
   border-color: #ffffff;
 }
+/* #endregion */

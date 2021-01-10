@@ -1,13 +1,27 @@
 const overlay = document.querySelector('.overlay');
+const signUpMessage = document.querySelector('.signup');
+const signInMessage = document.querySelector('.signin');
 
-function hideSignIn() {
+let isSignInVisible = true;
+
+function moveOverlay(isSignInVisible) {
+  if (isSignInVisible) {
+    overlay.classList.add('signup-active');
+    overlay.classList.remove('signin-active');
+  } else {
+    overlay.classList.add('signin-active');
+    overlay.classList.remove('signup-active');
+  }
+}
+
+function switchSignMethod() {
   overlay.classList.remove('no-animation');
-  overlay.classList.add('hide-right');
+
+  moveOverlay(isSignInVisible);
+
+  isSignInVisible = !isSignInVisible;
 }
 
-function hideSignUp() {
-  overlay.classList.remove('hide-right');
-}
-
-document.querySelector('#signin').addEventListener('click', hideSignUp);
-document.querySelector('#signup').addEventListener('click', hideSignIn);
+document
+  .querySelector('#switch-sign-method')
+  .addEventListener('click', switchSignMethod);
