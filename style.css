@@ -41,6 +41,10 @@ body {
   animation: hideSignUpAnimation var(--overlay-animtion-time);
   animation-timing-function: ease-out;
   overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .no-animation {
