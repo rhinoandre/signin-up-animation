@@ -6,9 +6,9 @@
   "author": "Rhino <andre.bazoli@yara.com>",
   "license": "MIT",
   "scripts": {
-    "start": "http-server"
+    "start": "parcel index.html"
   },
   "dependencies": {
-    "http-server": "^0.12.3"
+    "parcel": "^1.12.4"
   }
 }
