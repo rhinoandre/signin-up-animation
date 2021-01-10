@@ -4,8 +4,29 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sign In/Up Animation</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Sign In/Up Animation</h1>
+  <div class="login">
+    <div class="overlay-left">
+      <button class="ghost">Sign Up</button>
+    </div>
+    <div class="overlay-right">
+      <button class="ghost">Sign In</button>
+    </div>
+    <div class="overlay no-animation">
+      <div class="overlay-panel welcome-back">
+        <h1>Welcome Back</h1>
+        <p>Login in to keep connected with us</p>
+        <button id="signup">Sign Up</button>
+      </div>
+      <div class="overlay-panel hello-friend">
+        <h1>Hello, friend</h1>
+        <p>Enter your personal details and start a jorney with us</p>
+        <button id="signin">Sign In</button>
+      </div>
+    </div>
+  </div>
+  <script src="javascript.js"></script>
 </body>
 </html>
