@@ -83,6 +83,14 @@ body {
 #switch-sign-method {
   margin-top: 150px;
 }
+
+.signin-active #switch-sign-method:after {
+  content: 'Sign Up';
+}
+.signup-active #switch-sign-method:after {
+  content: 'Sign In';
+}
+
 @keyframes hideSignUpAnimation {
   from {
     width: 40%;
